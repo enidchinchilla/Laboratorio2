@@ -75,9 +75,14 @@
       <Project>{65e878b1-9b3b-4d3c-813a-18aa37945c1b}</Project>
       <Name>Laboratorio2.BizLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Laboratorio2.DataAccess\Laboratorio2.DataAccess.csproj">
+      <Project>{7027f5f9-f097-4071-b757-0d1a8c79fb20}</Project>
+      <Name>Laboratorio2.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Laboratorio2.Model.Extensions\Laboratorio2.Model.Extensions.csproj">
       <Project>{5de51397-16a4-4cec-8242-adb446adf99b}</Project>
       <Name>Laboratorio2.Model.Extensions</Name>
+      <Aliases>DataAccess</Aliases>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
