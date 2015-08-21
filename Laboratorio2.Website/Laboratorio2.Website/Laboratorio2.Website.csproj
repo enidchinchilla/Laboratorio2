@@ -125,7 +125,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Department.cshtml" />
-    <Content Include="Views\Salesperson\Address.cshtml" />
+    <Content Include="Views\SalesPerson\Address.cshtml" />
     <Content Include="Views\Customer\Address.cshtml" />
     <Content Include="Views\SalesOrder\List.cshtml" />
     <Content Include="Views\SalesOrder\Detail.cshtml" />
@@ -134,7 +134,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SalesOrderController.cs" />
+    <Compile Include="Controllers\SalesPersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,6 +160,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Laboratorio2.Model.Extensions\Laboratorio2.Model.Extensions.csproj">
+      <Project>{5de51397-16a4-4cec-8242-adb446adf99b}</Project>
+      <Name>Laboratorio2.Model.Extensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
