@@ -7,10 +7,14 @@ namespace Laboratorio2.WCFLayer
 {
     public class EmployeeService : IEmployeeService
     {
-        public List<EmployeeDepartment> GetEmployeeDepartments(DateTime? startDate, DateTime? endDate, string departmentName)
+        public List<EmployeeDepartment> GetDepartments(DateTime? startDate, DateTime? endDate, string departmentName)
         {
-            var employeeBL = new EmployeeBL();
-            return employeeBL.GetEmployeeDepartments(startDate,endDate,departmentName);
+            return new EmployeeBL().GetDepartments(startDate,endDate,departmentName);
+        }
+
+        public List<EmployeeDepartment> GetEmployeesByDepartmentID(short departmentID)
+        {
+            return new EmployeeBL().GetEmployeesByDepartmentID(departmentID);
         }
     }
 }

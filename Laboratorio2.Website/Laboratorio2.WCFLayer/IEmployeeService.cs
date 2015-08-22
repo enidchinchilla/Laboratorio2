@@ -9,7 +9,9 @@ namespace Laboratorio2.WCFLayer
     public interface IEmployeeService
     {
         [OperationContract]
-        List<EmployeeDepartment> GetEmployeeDepartments(DateTime? startDate, DateTime? endDate, string departmentName);
-    }
+        List<EmployeeDepartment> GetDepartments(DateTime? startDate, DateTime? endDate, string departmentName);
 
+        [OperationContract]
+        List<EmployeeDepartment> GetEmployeesByDepartmentID(short departmentID);
+    }
 }

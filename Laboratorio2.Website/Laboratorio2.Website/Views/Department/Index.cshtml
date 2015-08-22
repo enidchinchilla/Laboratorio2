@@ -1,0 +1,40 @@
+﻿@model Laboratorio2.Website.Models.DepartmentEmployeeModel
+@{
+    ViewBag.Title = "Departmentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-bottom:20px !important" class="container">
+    @using (Html.BeginForm())
+    {
+        <h2>Búsqueda de departamentos</h2>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Nombre del Departamento" })
+        @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control lab2-date", placeholder = "Fecha Inicio" })
+        @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control lab2-date", placeholder = "Fecha Fin" })
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Buscar</button>
+    }
+</div>
+@if (Model.Items != null && Model.Items.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Group Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var department in Model.Items)
+                {
+                    <tr>
+                        <td><a href="@(Url.Action("Employee") + "/" + department.DepartmentID)">@department.DepartmentID</a></td>
+                        <td>@department.Name</td>
+                        <td>@department.GroupName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

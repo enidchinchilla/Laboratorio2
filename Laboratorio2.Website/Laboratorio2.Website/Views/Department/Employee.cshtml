@@ -1,0 +1,48 @@
+﻿@model Laboratorio2.Website.Models.DepartmentEmployeeModel
+@{
+    ViewBag.Title = "Departamento -> Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-bottom:20px !important" class="container">
+    <h2>Lista de Empleados</h2>
+</div>
+
+@if (Model.Items != null && Model.Items.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID Empleado</th>
+                    <th>Cedula</th>
+                    <th>Login ID</th>
+                    <th>Puesto</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Estado Civil</th>
+                    <th>Género</th>
+                    <th>Vacaciones</th>
+                    <th>Inició en</th>
+                    <th>Salió en</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var department in Model.Items)
+                {
+                    <tr>
+                        <td>@department.BusinessEntityID</td>
+                        <td>@department.NationalIDNumber</td>
+                        <td>@department.LoginID</td>
+                        <td>@department.JobTitle</td>
+                        <td>@department.BirthDate.ToShortDateString()</td>
+                        <td>@(department.MaritalStatus.ToLowerInvariant().Equals("s") ? "Soltero" : "Casado")</td>
+                        <td>@(department.Gender.ToLowerInvariant().Equals("m") ? "Hombre" : "Mujer")</td>
+                        <td>@department.VacationHours</td>
+                        <td>@department.HireDate.ToShortDateString()</td>
+                        <td>@(department.EndDate.HasValue ? department.EndDate.Value.ToShortDateString() : "N/A")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
