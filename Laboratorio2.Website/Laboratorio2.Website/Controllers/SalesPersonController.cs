@@ -26,7 +26,7 @@ namespace Laboratorio2.Website.Controllers
             var model = new SalesPersonAddressModel();
             if (!string.IsNullOrEmpty(id))
             {
-                var personID = short.Parse(id);
+                var personID = int.Parse(id);
                 if (personID > 0)
                 {
                     var client = new SalesPersonServiceClient();

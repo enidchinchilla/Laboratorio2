@@ -8,10 +8,10 @@
     @using (Html.BeginForm())
     {
         <h2>Búsqueda de vendedores</h2>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Nombre vendedor" })
         @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "Ciudad" })
         @Html.TextBoxFor(x => x.Province, new { @class = "form-control", placeholder = "Provincia" })
         @Html.TextBoxFor(x => x.Country, new { @class = "form-control", placeholder = "País" })
-        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Nombre" })
         <button class="btn btn-lg btn-primary btn-block" type="submit">Buscar</button>
     }
 </div>
@@ -22,17 +22,15 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Group Name</th>
+                    <th>Nombre</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var person in Model.Items)
                 {
                     <tr>
-                        <td><a href="@(Url.Action("Address") + "/" + person.AddressID)">@person.BusinessEntityID</a></td>
-                        <td>@person.SalesYTD</td>
-                        <td>@department.GroupName</td>
+                        <td><a href="@(Url.Action("Address") + "/" + person.BusinessEntityID)">@person.BusinessEntityID</a></td>
+                        <td>@person.FirstName</td>
                     </tr>
                 }
             </tbody>
