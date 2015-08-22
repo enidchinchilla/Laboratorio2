@@ -1,8 +1,44 @@
-﻿
+﻿@model Laboratorio2.Website.Models.SalesOrderModel
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Órdenes -> Detalle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detail</h2>
+<div style="margin-bottom:20px !important" class="container">
+    <h2>Detalle de Orden</h2>
+</div>
 
+@if (Model.Items != null && Model.Items.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID Item</th>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th># Producto</th>
+                    <th>Color</th>
+                    <th>Precio Unidad</th>
+                    <th>Descuento</th>
+                    <th>Total Línea</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.Items)
+                {
+                    <tr>
+                        <td>@detail.SalesOrderDetailID</td>
+                        <td>@detail.OrderQty</td>
+                        <td>@detail.Name</td>
+                        <td>@detail.ProductNumber</td>
+                        <td>@detail.Color</td>
+                        <td>@("$" + string.Format("{0:0.00}", detail.UnitPrice))</td>
+                        <td>@("$" + string.Format("{0:0.00}", detail.UnitPriceDiscount))</td>
+                        <td>@("$" + string.Format("{0:0.00}", detail.LineTotal))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

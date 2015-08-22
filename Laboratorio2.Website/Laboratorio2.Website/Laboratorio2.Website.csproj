@@ -200,7 +200,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\SalesOrder\List.cshtml" />
+    <Content Include="Views\SalesOrder\Index.cshtml" />
     <Content Include="Views\SalesOrder\Detail.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
@@ -216,6 +216,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SalesOrderModel.cs" />
     <Compile Include="Models\PersonAddressModel.cs" />
     <Compile Include="Models\EmployeeDepartmentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

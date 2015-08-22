@@ -13,7 +13,7 @@ namespace Laboratorio2.BizLayer
         {
             using (var context = new Laboratorio2Entities())
             {
-                IQueryable<SalesOrder> query = context.SalesOrders;
+                IQueryable<SalesOrder> query = context.SalesOrders.Take(1000);
                 if (startDate.HasValue)
                     query = query.Where(e => e.OrderDate >= startDate);
                 if (endDate.HasValue)

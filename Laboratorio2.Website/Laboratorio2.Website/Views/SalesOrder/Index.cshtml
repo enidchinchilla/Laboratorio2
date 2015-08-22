@@ -1,0 +1,46 @@
+﻿@model Laboratorio2.Website.Models.SalesOrderModel
+@{
+    ViewBag.Title = "Órdenes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-bottom:20px !important" class="container">
+    @using (Html.BeginForm())
+    {
+        <h2>Búsqueda de órdenes</h2>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Nombre del Producto" })
+        @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control lab2-date", placeholder = "Fecha Inicio" })
+        @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control lab2-date", placeholder = "Fecha Fin" })
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Buscar</button>
+    }
+</div>
+@if (Model.Items != null && Model.Items.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th># Orden</th>
+                    <th># Compra</th>
+                    <th>Fecha Orden</th>
+                    <th>Estado</th>
+                    <th>Total Neto</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sale in Model.Items)
+                {
+                    <tr>
+                        <td><a href="@(Url.Action("Detail") + "/" + sale.SalesOrderID)">@sale.SalesOrderID</a></td>
+                        <td>@sale.SalesOrderID</td>
+                        <td>@sale.PurchaseOrderNumber</td>
+                        <td>@sale.OrderDate.ToShortDateString()</td>
+                        <td>@(sale.Status == 5 ? "Procesada" : "Pendiente")</td>
+                        <td>@("$" + string.Format("{0:0.00}", sale.TotalDue))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
