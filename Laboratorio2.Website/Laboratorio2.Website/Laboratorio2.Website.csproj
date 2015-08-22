@@ -286,12 +286,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Laboratorio2.Model.Extensions\Laboratorio2.Model.Extensions.csproj">
-      <Project>{5de51397-16a4-4cec-8242-adb446adf99b}</Project>
-      <Name>Laboratorio2.Model.Extensions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadataStorage Include="Service References\EmployeeService\" />
     <WCFMetadataStorage Include="Service References\PersonService\" />
     <WCFMetadataStorage Include="Service References\SalesOrderService\" />
