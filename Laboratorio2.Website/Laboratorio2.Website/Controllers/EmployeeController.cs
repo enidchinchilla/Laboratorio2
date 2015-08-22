@@ -8,8 +8,7 @@ namespace Laboratorio2.Website.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee
-        public ActionResult Index()
+        public ActionResult Department()
         {
             return View();
         }
