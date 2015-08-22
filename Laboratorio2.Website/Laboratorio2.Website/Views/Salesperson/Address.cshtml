@@ -1,8 +1,40 @@
-﻿
+﻿@model Laboratorio2.Website.Models.SalesPersonAddressModel
 @{
-    ViewBag.Title = "Address";
+    ViewBag.Title = "Vendedores -> Direcciones";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Address</h2>
+<div style="margin-bottom:20px !important" class="container">
+    <h2>Lista de Direcciones</h2>
+</div>
 
+@if (Model.Items != null && Model.Items.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Dirección</th>
+                    <th>País</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Código Postal</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var address in Model.Items)
+                {
+                    <tr>
+                        <td>@address.AddressID</td>
+                        <td>@(address.AddressLine1 + "\n" + address.AddressLine2)</td>
+                        <td>@address.CountryRegionName</td>
+                        <td>@address.City</td>
+                        <td>@address.StateProvinceName</td>
+                        <td>@address.PostalCode</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

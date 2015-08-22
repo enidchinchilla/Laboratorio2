@@ -117,6 +117,7 @@
     <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -162,6 +163,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Properties\DataSources\Laboratorio2.DataAccess.EmployeeDepartment.datasource" />
+    <Content Include="Properties\DataSources\Laboratorio2.DataAccess.PersonAddress.datasource" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -185,12 +187,17 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\SalesPersonService\configuration91.svcinfo" />
+    <None Include="Service References\SalesPersonService\configuration.svcinfo" />
+    <None Include="Service References\SalesPersonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
-    <Content Include="Views\SalesPerson\Address.cshtml" />
     <Content Include="Views\Customer\Address.cshtml" />
     <Content Include="Views\SalesOrder\List.cshtml" />
     <Content Include="Views\SalesOrder\Detail.cshtml" />
@@ -214,6 +221,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SalesPersonAddressModel.cs" />
     <Compile Include="Models\EmployeeDepartmentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CustomerService\Reference.cs">
@@ -222,6 +230,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\EmployeeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SalesPersonService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -241,6 +254,18 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Department\Employee.cshtml" />
+    <Content Include="Views\SalesPerson\Address.cshtml" />
+    <Content Include="Views\SalesPerson\Index.cshtml" />
+    <None Include="Service References\SalesPersonService\Laboratorio2.DataAccess.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalesPersonService\service.wsdl" />
+    <None Include="Service References\SalesPersonService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalesPersonService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,6 +288,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CustomerService\" />
     <WCFMetadataStorage Include="Service References\EmployeeService\" />
+    <WCFMetadataStorage Include="Service References\SalesPersonService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
