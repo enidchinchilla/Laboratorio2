@@ -1,20 +1,25 @@
-﻿using Laboratorio2.Website.CustomerService;
-using System;
-using System.Collections.Generic;
+﻿using Laboratorio2.Website.Models;
+using Laboratorio2.Website.PersonService;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Laboratorio2.Website.Controllers
 {
     public class CustomerController : Controller
     {
-        public ActionResult Address()
+        public ActionResult Index()
         {
-            var client = new CustomerServiceClient();
-            var result = client.GetData(1);
-            return View();
+            return View(new PersonAddressModel());
         }
+
+        [HttpPost]
+        public ActionResult Index(PersonAddressModel model)
+        {
+            var client = new PersonServiceClient();
+            var persons = client.GetPersons(2, model.City, model.Province, model.Country, model.Name).ToList();
+            model.Items = persons;
+            return View(model);
+        }
+
     }
 }

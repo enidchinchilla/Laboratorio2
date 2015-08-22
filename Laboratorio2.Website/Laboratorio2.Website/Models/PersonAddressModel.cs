@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Laboratorio2.Website.Models
 {
-    public class SalesPersonAddressModel
+    public class PersonAddressModel
     {
         public string City { get; set; }
         public string Province { get; set; }

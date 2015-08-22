@@ -1,4 +1,4 @@
-﻿@model Laboratorio2.Website.Models.SalesPersonAddressModel
+﻿@model Laboratorio2.Website.Models.PersonAddressModel
 @{
     ViewBag.Title = "Vendedores";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -29,7 +29,7 @@
                 @foreach (var person in Model.Items)
                 {
                     <tr>
-                        <td><a href="@(Url.Action("Address") + "/" + person.BusinessEntityID)">@person.BusinessEntityID</a></td>
+                        <td><a href="@Url.Action("Index", "Address", new { id = person.BusinessEntityID } )">@person.BusinessEntityID</a></td>
                         <td>@person.FirstName</td>
                     </tr>
                 }

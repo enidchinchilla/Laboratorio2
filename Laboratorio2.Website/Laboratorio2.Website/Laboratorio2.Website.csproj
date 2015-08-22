@@ -164,6 +164,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Properties\DataSources\Laboratorio2.DataAccess.EmployeeDepartment.datasource" />
     <Content Include="Properties\DataSources\Laboratorio2.DataAccess.PersonAddress.datasource" />
+    <Content Include="Properties\DataSources\Laboratorio2.DataAccess.SalesOrder.datasource" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -175,21 +176,21 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <None Include="Service References\CustomerService\configuration91.svcinfo" />
-    <None Include="Service References\CustomerService\configuration.svcinfo" />
-    <None Include="Service References\CustomerService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\EmployeeService\configuration91.svcinfo" />
     <None Include="Service References\EmployeeService\configuration.svcinfo" />
     <None Include="Service References\EmployeeService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\SalesPersonService\configuration91.svcinfo" />
-    <None Include="Service References\SalesPersonService\configuration.svcinfo" />
-    <None Include="Service References\SalesPersonService\Reference.svcmap">
+    <None Include="Service References\PersonService\configuration91.svcinfo" />
+    <None Include="Service References\PersonService\configuration.svcinfo" />
+    <None Include="Service References\PersonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SalesOrderService\configuration91.svcinfo" />
+    <None Include="Service References\SalesOrderService\configuration.svcinfo" />
+    <None Include="Service References\SalesOrderService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -198,43 +199,37 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
-    <Content Include="Views\Customer\Address.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\SalesOrder\List.cshtml" />
     <Content Include="Views\SalesOrder\Detail.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <None Include="Service References\CustomerService\service.wsdl" />
-    <None Include="Service References\CustomerService\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CustomerService\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalesOrderController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\SalesPersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\SalesPersonAddressModel.cs" />
+    <Compile Include="Models\PersonAddressModel.cs" />
     <Compile Include="Models\EmployeeDepartmentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\CustomerService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\EmployeeService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\SalesPersonService\Reference.cs">
+    <Compile Include="Service References\PersonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SalesOrderService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -254,16 +249,26 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Department\Employee.cshtml" />
-    <Content Include="Views\SalesPerson\Address.cshtml" />
+    <Content Include="Views\Address\Index.cshtml" />
     <Content Include="Views\SalesPerson\Index.cshtml" />
-    <None Include="Service References\SalesPersonService\Laboratorio2.DataAccess.xsd">
+    <None Include="Service References\PersonService\Laboratorio2.DataAccess.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalesPersonService\service.wsdl" />
-    <None Include="Service References\SalesPersonService\service.xsd">
+    <None Include="Service References\PersonService\service.wsdl" />
+    <None Include="Service References\PersonService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalesPersonService\service1.xsd">
+    <None Include="Service References\PersonService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalesOrderService\Laboratorio2.DataAccess.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalesOrderService\service.wsdl" />
+    <None Include="Service References\SalesOrderService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalesOrderService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -286,9 +291,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\CustomerService\" />
     <WCFMetadataStorage Include="Service References\EmployeeService\" />
-    <WCFMetadataStorage Include="Service References\SalesPersonService\" />
+    <WCFMetadataStorage Include="Service References\PersonService\" />
+    <WCFMetadataStorage Include="Service References\SalesOrderService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
