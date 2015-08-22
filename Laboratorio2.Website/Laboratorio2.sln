@@ -14,8 +14,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratorio2.DataAccess", "Laboratorio2.DataAccess\Laboratorio2.DataAccess.csproj", "{7027F5F9-F097-4071-B757-0D1A8C79FB20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratorio2.Model.Extensions", "Laboratorio2.Model.Extensions\Laboratorio2.Model.Extensions.csproj", "{5DE51397-16A4-4CEC-8242-ADB446ADF99B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7027F5F9-F097-4071-B757-0D1A8C79FB20} = {7027F5F9-F097-4071-B757-0D1A8C79FB20}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratorio2.WCFLayer", "Laboratorio2.WCFLayer\Laboratorio2.WCFLayer.csproj", "{25CC7601-D48B-4529-9DEA-12213A9B7EA7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5DE51397-16A4-4CEC-8242-ADB446ADF99B} = {5DE51397-16A4-4CEC-8242-ADB446ADF99B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
